@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- DOM đại diện cho html  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heading">heading text</h1>
+
+    <h2 class="heading1">
+        <button id="btn">amen</button>
+
+
+
+        <span>heading </span>
+        <span>text </span>
+    </h2>
+    <h3 >
+        <span style="display: none;">heading </span>
+        <span>text </span>
+        <!-- style hay element mà ko có textnode nó sẽ bỏ qua   -->
+        <!-- trình duyệt node hiểu style dùng để thây đổi kích thước 
+        tuy nhiên nó nẳm trong dom thì nó là thẻ tag nẳm trong thẻ tag thì nó là textnode
+        -->
+        <style>
+            /* thì inner nó sẽ ko hiênj ra vì thằg textnode này ko hiển thị trên giao diện 
+                còn thằng textContent thì chỉ cần nó là text node là nó sẽ hiện ra
+            */
+            .box{
+                width: 10px;
+                height: 10px;
+            }
+        </style>
+        <script>
+            // alert('text')
+        </script>
+    </h3>
+
+    <script src="InnerTextvstextContentProperty.js"></script>
+</body>
+</html>

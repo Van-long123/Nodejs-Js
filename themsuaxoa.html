@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 60%;
+            max-width: 500px;
+        }
+        #update{
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Danh sách khóa học</h2>
+        <ul id="list-courses">
+            <!-- khóa học nó sẽ load ở database và in ra giao diện  -->
+        </ul>
+    </div>
+
+    <!-- tạo một form  -->
+    <div>
+        <div>
+            <label>Name</label>
+            <!-- đặt name trùng với database  -->
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label>description</label>
+            <input type="text" name="description">
+        </div>
+        <!-- yêu cầu là bấmnút đó là tạo ra khóa học trên render (giao diện ) 
+        vaf bắt sự kiện khi click vào Create-->
+        <div>
+            <button id="create">Create</button>
+            <button id="update">save</button>
+        </div>
+    </div>
+    <script src="themsuaxoa.js"></script>
+</body>
+</html>

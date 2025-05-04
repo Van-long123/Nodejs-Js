@@ -1,0 +1,18 @@
+.test{
+    color: red;
+}
+table {
+    width: 50%;
+    /* Loại bỏ khoảng cách giữa các ôf */
+   /* border-collapse: collapse;  */
+   border: 1px solid #f2f2f2;
+}
+th, td {
+    border: 2px solid black; /* Đường viền cho các ô */
+    padding: 8px; /* Khoảng cách trong các ô */
+    text-align: left; /* Căn chỉnh văn bản bên trái */
+}
+
+th {
+    background-color: #f2f2f2; /* Màu nền cho các ô tiêu đề */
+}

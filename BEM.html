@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* code thường như này thì khi làm việc nhóm thằng này viết khác thằng kia viết khác lại trùng nhau 
+        ví dụ .card .heading ôgn sau viết .heading thì lỡ như có ông nào đó cùng thì bị ghi đè */
+        /* body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div .card{
+            background-color: antiquewhite;
+            width: 300px;
+            padding: 30px;
+        } */
+        /* Ví dụ dùng BEM tạo buttons */
+        body{
+            height: 100vh;
+            display: flex;
+        }
+        body > div{
+            margin: auto;
+        }
+        /* này là vấn đề của thẻ a  */
+        /* .btn{
+            display: inline-block;
+            text-decoration: none;
+        } */
+        /* vấn đề của button  
+        là loại bỏ màu xám*/
+        /* kieuẻ mà 3 thằng có điểm chung là làm trong này 
+        còn muốn bổ sung thêm gì thì làm ở 3 thằng dưới */
+        .btn{
+            display: inline-block;
+            background-color: transparent;
+            border: none;
+            /* và ngoài ra còn có outline  */
+            outline: none;
+            color: #fff;
+            padding:12px 50px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 1s ease;
+            /* kiểu nhỏ nhất là 100px khi mà đặt thàng nào có width dưới 100 thì nó vẫn sẽ là 100px  */
+            min-width: 120px;
+        }
+        .btn:hover{
+            /* đọ mờ  */
+            opacity: 0.8;
+        }
+        .btn--succes{
+            background-color: #71be34;
+        }
+        .btn--warn{
+            background-color: #ffb702;
+
+        }
+        .btn--danger{
+            background-color: #ff623d;
+        }
+        /* trong thực tế các nút đặt ở cạnh nhau luôn muốn cách ra dung inline block nó khoảng cách bé xíu 
+        nên dùng magin để đẩy nó ra*/
+        /* .btn + .btn có nghĩa làsẽ css cho cái btn nào dứng cạnh btn ở đằng sau 
+        thằng đc css đó là hai thằng cuối  nó là hai thằng đúng sau btn
+        kiểu thằng btn thứ nhât đi với btn thứ hai btn thứ hai đi với btn thứ nhất
+        */
+        .btn + .btn{
+            margin-left: 16px;
+        }
+        /* nút có hai trạng thái là 
+        enabled(pointer,hover efect) là nút bấm được thì nó có pointer và hovver
+         và
+          disabled laf trạng thái nút đó ko đc bấm vào nữa*/
+          .btn--disabled{
+            opacity: 0.5 !important;
+            cursor: default;
+}
+.btn--size-l{
+    padding:16px 56px;
+}
+.btn--size-s{
+    padding:10px 45px;
+}
+    </style>
+</head>
+<body>
+    <!-- <div> -->
+        <!-- <div class="card">
+            <h3 class="heading">Save!</h3>
+            <p class="decs">look like you got a great idea.</p>
+            <div class="btn">Ok, cool</div>
+
+        </div> -->
+
+        <!--viết lại theo BEM  -->
+        <!-- kiểu block và elemnet khi code xong chỉ trăndgs đen dùng modifire để thêm màu css cho nó kiểu bổ sung thêm cho block và element -->
+        <!-- <div class="card card--succes">
+            <h3 class="card__heading">Save!</h3>
+            <p class="card__decs">look like you got a great idea.</p> -->
+            <!-- ví dụ ông này nút to ko phải nút nhỏ nữa dùng element--modifire  -->
+            <!-- <div class="card__btn card__btn--size">Ok, cool
+         </div>
+         <div class="card card--error">
+            <h3 class="card__heading">Save!</h3>
+            <p class="card__decs">look like you got a great idea.</p>
+            <div class="card__btn">Ok, cool
+         </div>
+    </div> -->
+    
+
+    <div>
+        <!-- <a href="" class="btn">GO TO NET APPOVAL</a >
+        <a href="" class="btn">OK</a >
+        <a href="" class="btn">TRY AGAIN</a > -->
+            <button href="" class="btn btn--succes btn--disabled btn--size-l">GO TO NET </button >
+            <button href="" class="btn btn--warn btn--size-s">OK</button >
+            <button href="" class="btn btn--danger">TRY AGAIN</button >
+    </div>
+    <!-- Ví dụ dùng BEM tạo buttons -->
+    <script src="BEM.js"></script>
+</body>
+</html>

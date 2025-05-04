@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pull-right{
+                float:right;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="card">
+            <div class="card__title"></div>
+            <div class="card__desc"></div>
+            <!-- khi nhìn đặt tên class như này thì sẽ hiểu thằng này thuộc thằng card   1 cái card đóng gói các element bên trong có cái tên 
+            theo cú pháp là card__ or card-- thì chỉ thuộc card này 
+        mà thằng butoon này sẽ xuất hiện nhiều nơi trên website nên ko đặt tên như thế dex gây hiều nhầm -->
+            <!-- <div class="card__btn btn btn--primary"> </div> -->
+            <!-- có một trường hợp là tất cả thằng button ở giữa riêng một thằng ở bên phải thì tạo một class riêng cho nó ví dụ .pull-right{
+                float:right;
+            }
+        ví dụn có thêm một thằng cũng nằm bên phải nữa thì thêm pull-right vào 
+    còn trong trường hợp nút này khác riêng biệt ko dùng chung lại đc thì đặt tên class như bình thường là card-- __ -->
+            <div class="btn btn-primary pull-right"> </div>
+        </div>
+    </div>
+    <!-- tiếp theo block con chứa nhiều element  và ko phải là thằng dùng chung giống như thằng btn trên kia-->
+    <div>
+        <div class="header">
+            <!-- layout coi owr header youtube  -->
+            <div class="header__logo"></div>
+            <!-- tới thằng search thì nó thêm 1 thẻ div trong div có input  button submit-->
+           <!-- thằng đầu bị dài dong  -->
+
+            <!-- <div class="header__search"> -->
+                <!-- như này nó dài và xấu nếu nó thêm con thì phải - thêm cái nữa
+                nếu mà header__search__input thì làm gì có block là  header__search nên phải header__search-input-->
+                <!-- đặt như thês sẽ bị xấu ta tách thằng search ra thành một block riêng  coi thằng search là một block riêng-->
+                <!-- <div class="header__search-input"></div>
+                <div class="header__search-btn"></div>
+            </div> -->
+            <!-- thằng sau tách nó thnahf một block luôn  -->
+            <!-- block mới  -->
+            <div class="header-search">
+                <!-- input là element của block mới này  -->
+                <div class="header-search__input"></div>
+                <div class="header-search__btn"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ví dụ thằng shopee  -->
+    <div class="header">
+        <!-- nhinf code nos xaaus  -->
+        <!-- suaử lại  -->
+        <!-- <div class="header__navbar">
+            <div class="header__navbar-item"></div>
+        </div> -->
+        <!-- coi thằng này là code block luôn vì nó nhiều thành phânf nên dùng thế -->
+        <div class="navbar">
+            <div class="navbar__item"></div>
+            <div class="navbar__item"></div>
+            <div class="navbar__item"></div>
+        </div>
+        <div class="search">
+            <div class="search__input"></div>
+            <div class="search__btn"></div>
+
+            <div class="search-suggest">
+                <div class="search-suggest-child"></div>
+                <div class="search-suggest-child"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

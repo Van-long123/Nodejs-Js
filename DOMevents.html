@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- onblur này là khi nhấn vào mà nhấn ra nó sẽ hiển thị thông báo  -->
+    <input type="text" onblur="alert('Bạn đã di chuyển ra khỏi ô nhập liệu')">
+   <!-- this chính là cái thẻ element đó 
+this đó là node elemrnt thì nó như thằng mà ta láy thông qua documnt-->
+    <h1  onclick="console.log(this)">DOm events</h1>
+    <h1  onclick="console.log(this.innerText)">DOm events</h1>
+
+    <h1  onclick="console.log(this)">
+        <!-- click vào con của thẻ đang sử dụng onclick thì nó vẫn lọt vào  
+        khi bạn click vào element con đang lắng nghe sự kiện thì cái hành đó sẽ lắng nghe lên thẻ span trước
+    sau đó nó nổi bọt ra ngoài thằng cha nó sẽ ânhr hưởng-->
+        <span>DOM eventS</span>
+    </h1>
+    <!-- dươis đây thì khi nhấn vào DOM eventS nè thì nó sẽ in ra ba lần là soan và cả thẻ h1 và div // -->
+   <div onclick="console.log(this)">
+    <h1 >
+        <!-- click vào con của thẻ đang sử dụng onclick thì nó vẫn lọt vào  
+        khi bạn click vào element con đang lắng nghe sự kiện thì cái hành đó sẽ lắng nghe lên thẻ span trước
+    sau đó nó nổi bọt ra ngoài thằng cha nó sẽ ânhr hưởng-->
+    <!-- khi khinhaasn vào thì nó sẽ lắng nghe thằng này trước cong tới thằng cha coi có onclick ko ./  -->
+        <span  onclick="console.log(this)">DOM eventS nè</span>
+    </h1>
+   </div>
+    
+    <h1  onclick="random()">DOm events</h1>
+
+    <h2  onclick="console.log(Math.random())">DOm events</h2>
+
+    <!-- thằng này là khi đauw chuột vào giống hover  -->
+    <h2  onmouseover="console.log(Math.random())">con me no</h2>
+
+<!-- là di chuột ra  -->
+    <h2  onmouseout="console.log(Math.random())">con me mày</h2>
+
+    <input type="text" onfocus="this.style.backgroundColor='yellow'">
+
+    <!-- cái khác  -->
+    <h3 class="heading">
+        <span>DOm events</span>
+    </h3>
+    <h3 class="heading">
+        <span>DOm events2</span>
+    </h3>
+    <h3 class="heading">
+        <span>DOm events3</span>
+    </h3>
+
+    <script src="DOMevents.js"></script>
+</body>
+</html>

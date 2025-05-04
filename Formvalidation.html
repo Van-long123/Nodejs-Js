@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+      <!-- Khi method="POST" được sử dụng, dữ liệu từ form sẽ được gửi dưới dạng yêu cầu HTTP POST. Điều này có nghĩa là dữ liệu form sẽ được đóng gói và gửi kèm với yêu cầu HTTP đến máy chủ web. -->
+  <form action="" method="POST" class="form" id="form-1">
+    <h3 class="heading">Thành viên đăng ký</h3>
+    <p class="desc">học lập trình  ❤️</p>
+
+    <div class="spacer"></div>
+
+    <!-- thêm class invalid thì sẽ màu đỏ  -->
+    <!-- <div class="form-group invalid"> -->
+    <div class="form-group ">
+      <label for="fullname" class="form-label">Tên đầy đủ</label>
+      <!-- ví dụ của form bài 3   -->
+      <!-- <div>
+        <div style="display: flex; flex-direction: column;"> -->
+          <input id="fullname" name="fullname" type="text" placeholder="VD: Long Phạm" class="form-control">
+        <!-- </div>
+      </div> -->
+     <!-- dùng để thông báo lỗi khi có lỗi  thì nó mỡi hiển thị ra-->
+      <!-- <span class="form-message">vui lòng nhập trường này</span> -->
+      <span class="form-message"></span>
+    
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" name="email" type="text" placeholder="VD: email@long.com" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password" class="form-label">Mật khẩu</label>
+      <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+      <input   id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <!-- dưới đây là file thì cũng như input thế thôi nhưng nó sẽ trả về value là chỗ lưu file
+    ddos là vấn đề  sẽ ko đc lấy value  file là phải lấy input file-->
+    <div class="form-group">
+      <label for="avatar" class="form-label">ảnh đại diện</label>
+      <input   id="avatar" name="avatar"  type="file" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+<!-- hoạt động giống như input thees thooi chọn là có giá trị trên input luôn chỉ .value là lấy về
+và bài toán tiếp là  nhấn chọn vào v là lôix ngay thì dùng onchange-->
+    <div class="form-group">
+      <label for="province" class="form-label">Tỉnh/TP</label>
+      <select   id="province" name="province" class="form-control">
+        <option value="">--chọn tỉnh/tp--</option>
+        <option value="hni">hà Nội</option>
+        <option value="hpg">Phải Phòng</option>
+
+      </select>
+      <span class="form-message"></span>
+    </div>
+
+    <!-- đặt rule cho ông radio này 
+    kiểu radi là chọn một còn checkbõ là chọn nhiều đc kiểu chọnn nhiều nhưng nó chỉ chọn đc một thằng đầu tiên đó là lỗi của checkbox 
+    -->
+    <div class="form-group">
+      <label for="password_confirmation" class="form-label">Giới tính</label>
+      <div class="Gender">
+        <!-- có thằng checked này thì nó sẽ tự chọn thẳng còn ko là nhấn chọn đúng đắn nhất là ko nên có checked -->
+        <input  name="gender" type="checkbox" value="male" class="form-control">
+        <span  style="margin: 16px 0 0 10px;">Nam</span>
+      </div>
+      <div class="Gender">
+        <input  name="gender" type="checkbox" value="female" class="form-control">
+        <span style="margin: 16px 0 0 10px;">Nữ</span>
+      </div>
+      <div class="Gender">
+        <input  name="gender" type="checkbox" value="orther" class="form-control">
+        <span style="margin: 16px 0 0 10px;">Khác</span>
+      </div>
+      <span class="form-message"></span>
+    </div>
+    <button class="form-submit">Đăng ký</button>
+    <!-- <button onclick="gui()" >Đăng ký</button> -->
+  
+  </form>
+ 
+
+
+<!-- trong thực tế ko có hai cái form này đâu chỉ là ví dụ  thôi  -->
+  <!-- <form action="" method="POST" class="form" id="form-2">
+    <h3 class="heading">Đăng nhập</h3>
+    <p class="desc">học lập trình  ❤️</p>
+
+    <div class="spacer"></div>
+    <div class="form-group ">
+      <label for="fullname" class="form-label">Tên đầy đủ</label>
+      <div>
+        <div style="display: flex; flex-direction: column;">
+          <input id="fullname" name="fullname" type="text" placeholder="VD: Long Phạm" class="form-control">
+        </div>
+      </div>
+
+      <span class="form-message"></span>
+    
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" name="email" type="text" placeholder="VD: email@long.com" class="form-control">
+      <span class="form-message"></span>
+    </div>
+    <button class="form-submit">Đăng ký</button>
+  </form> -->
+</div>
+
+<script src="Formvalidation.js"></script>
+
+<!-- thawfng script đây sẽ nằm ở cuối file js  nghĩa là đoạn code cuả Formvalidation này ở trên và thằng này ở dưới -->
+<script>
+    //mong muốn của chúng ta viet xong thư viện Formvalidation.js này thì mình sử dung  validator đơn giản như bên dưới 
+    // thằg này chưa định nghĩa nó sẽ đc dịnh nghĩa bên js
+    // viết xong như này laf phải qua web bấm blur ra ngoài hai tahwfng email và name là báo lỗi ngày nếu ko nhâp 
+   //tahwfng này đc định nghãĩa bên js
+  //  này ở dưới thằng Formvalidation.js là đúng rồi trên là khai báo function còn dưới là gọi function để chạy 
+
+  //khi validator đc gọi thì  các hàm validator.isRequired('#email') và validator.isemail('#email'),  này sẽ được thực thi và trả về giá trị của mình.
+
+
+    validator({
+        // tại sao phải lất selector của form này làm gì vì ta validation cho form này nên lấy ra element của form để tìm ra element con trong form này
+        form:'#form-1',
+        formGroupselector:'.form-group',
+        // errorselector:'.form-mesage '
+        // cả cái rules này đc cầm và truyền vào validator này 
+        rulers:[
+            // bran chất của việc chạy hai cái hàm này là nhận lại một giá trị mà hàm nó return  
+            // bắt buộc nhập fullname dùng ở dưới
+            // isRequired có nghũa là bắt buộc 
+            // bản chất là đang chạy một cái hàm đauw vào aray và có key là rules
+       //truyên vào dạng đối số '#fullname'
+      //  validator có phương thức isRequired để kiểm tra tính hợp lệ của trường dữ liệu.
+      //  validator.isRequired('#fullname'),
+        // email phải là email   đúng định dạng email 
+        // email giống với thằng password_confirmation thằng thứ nhất bị ghi đè bởi hằng thứ 2
+        //kiểu h khi chưa nhập là báo vui lòng nhập truongwf này còn nhập rồi mới kiểm tra thử có phải email ko   
+        validator.isRequired('#email'),
+            validator.isemail('#email'),
+
+        // validator.isRequired('#avatar'),
+
+            // tiếp theo  qua bài form phần 2 làm mật khẩu
+            // validator.isRequired('#password'),
+            // validator.minLength('#password',6),
+            // bây giờ nhập lại mật khẩu h lamf sao ddeer nó giống value thẻ input bên trên
+            //vì trên mâtj khẩu nhập gì thì dưới nó phải đúng 
+            // khi chậy ba thằng trên rồi chạy tới thằng này thì nó đầu tiên sẽ get value có trên input pasword
+            //như này thì rule này ko hoạth dộng nó chỉ chạy rule 2 vì rule được vòng lặp lặp qua thì nó gán vào function chạy qua tghawfng tiếp theo nó ghi đè thằng nớ 
+            //h làm như thế nào để qpas dụng nhiều rule với một trường
+
+            // lấy ra tất cả thằng input có name là gender nhưng vẫn ko đc lấy ra được input nhưng ko báo lỗi
+            // vì cái thẻ input[name="gender"] này .value nó sẽ lấy ra value="male này nó sẽ ko bị lỗi nó trả ra thẳng cái đó
+           // lâsy ra được rồi thif nó pass thôi
+          //  .value thì thằng này có value để trả nên ko lỗi
+            // validator.isRequired('input[name="gender"]'),
+            // validator.isRequired('#password_confirmation'),
+//             validator.isComfired('#password_confirmation',function(){
+//               // ví dụ h người dùng phải nhập vào đây f8 ko thì nó sẽ báo lỗi 
+//              //cáci cũs
+//               // return 'f8'
+//               //cái mới  c1
+//               // return value;
+//               //cáci mới c2
+//               // mối lần rule đưco jchaayj  
+//               return document.querySelector('#form-1 #password').value;
+// //thêm một đối số thứ 3 để cho nó
+//             },'Mật khẩu nhập lại ko chính xác'),
+            // validator.isRequired('#province'),
+        ],
+        
+        // trong thực tế ko phải ai cũng submit với JS này đôi khi vẫn muốn dùng hành độngsubmit
+        //  thông thường của html nên comment cái này đi và gọi qua bên kia trong else
+            // mong muốn khi  nhập hết các trường nhấn nút đăng ký thì nó sẽ lọt vào và in ra dữ liệu của form này
+        onSubmit:function(data){
+          console.log(data)
+        }
+
+    })
+
+
+// gọi ra để dùng nếu ko thì nó sẽ ko báo lỗi và nhấn ónubmit thì nó trở về mặc định 
+    // muốn dùng thì gọi thôi lại thôi
+// validator({
+//         form:'#form-2',
+//         formGroupselector:'.form-group',
+//         rulers:[
+//             validator.isRequired('#fullname'),
+//         validator.isRequired('#email'),
+//             validator.isemail('#email'),
+
+
+//         ],
+
+//         onSubmit:function(data){
+//           console.log(data)
+//         }
+
+//     })
+
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- document.querySelector('#form-1 #password').value
+lấy giá trị này bằng cách có sẵn giá trị trên input mới lấy đc ko có là nó trả về rônngx
+cách lấy là khi nhập xong giá trị gọi tới function get nó ra tại lúc này ;là có giá trị sẵn trên đó
+dùng domevent addmouselistenner 
+-->

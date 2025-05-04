@@ -1,0 +1,12 @@
+extend layouts/default.pug
+include mixins/box-head.pug
+block content
+    +boxHead("trang sản phẩm","Đây là đoạn mô tả của trang sản phẩm")
+    ul 
+    - var count=1; 
+        each item,index in products
+            li #{count}
+            li #{item.title}
+            li #{item.price}
+            li #{item.thumbnail}
+            - count +=1

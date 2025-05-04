@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body>div {
+            margin: 5% auto 0;
+            max-width: 720px;
+        }
+
+        .tabs {
+            display: flex;
+            position: relative;
+        }
+
+        .tabs .line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 6px;
+            border-radius: 15px;
+            background-color: #c23564;
+            transition: all 0.2s ease;
+        }
+
+        .tab-item {
+            min-width: 80px;
+            padding: 16px 20px 11px 20px;
+            font-size: 20px;
+            text-align: center;
+            color: #c23564;
+            background-color: #fff;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom: 5px solid transparent;
+            opacity: 0.6;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .tab-icon {
+            font-size: 24px;
+            width: 32px;
+            position: relative;
+            top: 2px;
+        }
+
+        .tab-item:hover {
+            opacity: 1;
+            background-color: rgba(194, 53, 100, 0.05);
+            border-color: rgba(194, 53, 100, 0.1);
+        }
+
+        .tab-item.active {
+            opacity: 1;
+        }
+
+        .tab-content {
+            padding: 28px 0;
+        }
+
+        .tab-pane {
+            color: #333;
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-pane h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- Tab items -->
+        <div class="tabs">
+            <div class="tab-item active">
+                <i class="tab-icon fas fa-code"></i>
+                React
+            </div>
+            <div class="tab-item">
+                <i class="tab-icon fas fa-cog"></i>
+                Angular
+            </div>
+            <div class="tab-item">
+                <i class="tab-icon fas fa-plus-circle"></i>
+                Ember
+            </div>
+            <div class="tab-item">
+                
+                <i class="tab-icon fas fa-pen-nib"></i>
+                Vue.JS
+            </div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Tab content -->
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <h2>React</h2>
+                <p>React makes it painless to create interactive UIs. Design simple views for each state in your
+                    application, and React will efficiently update and render just the right components when your data
+                    changes.</p>
+            </div>
+            <div class="tab-pane">
+                <h2>Angular</h2>
+                <p>Angular is an application design framework and development platform for creating efficient and
+                    sophisticated single-page apps.</p>
+            </div>
+            <div class="tab-pane">
+                <h2>Ember</h2>
+                <p>Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It
+                    includes everything you need to build rich UIs that work on any device.</p>
+            </div>
+            <div class="tab-pane">
+                <h2>Vue.js</h2>
+                <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike
+                    other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. </p>
+            </div>
+        </div>
+    </div>
+    <script src="TabsUI.js"></script>
+    <script>
+        //  <script>const $ = document.querySelector.bind(document);: Đây là một
+        //  hàm được gán cho biến $. Hàm này sử dụng phương thức querySelector()
+        //   của đối tượng document để tìm và trả về phần tử đầu tiên trong DOM phù
+        //   hợp với truy vấn CSS được truyền vào. Bằng cách sử dụng bind(document),
+        //    hàm được gắn kết với đối tượng document, vì vậy khi gọi $(), nó tương 
+        //    đương với document.querySelector().
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+
+        const tabs = $$(".tab-item");
+        const panes = $$(".tab-pane");
+        // line
+        // class="tab-item active" cùng class là phải sat nhau
+        const tabActive=$(".tab-item.active");
+        console.log(tabActive)
+        const line=$('.tabs .line')
+        line.style.left=tabActive.offsetLeft+'px'
+        line.style.width=tabActive.offsetWidth+'px'
+        // ném nó vào [] {} thì nó sẽ ko hiển thị nhue vậy nữa 
+        // ta sẽ xem đc cái thuộc tính và phương thức của object bản chất element là object 
+        // ta phải lấy đc vị trí bên trái của tab này nó gọi là offsetLeft và kích thước chiều ngang
+        // của tab này thì set vào cái line vì nguyên tắc là line phải = cái tab
+        // offsetWidth là kích thước chiều ngang của tab h đi set offsetLeft vào cái thuộc tính 
+        // left của line và offsetWidth vào ưidth của line 
+        console.log([tabActive])
+        // line/ 
+        // nhiệm vụ của chúng ta cái tab nó đang active ở thằng số 1 
+        // khi click sang thằng 2 thì active chuyển sang thàng hai xóa đi active thằng 1
+        tabs.forEach((tab,index)=>{ 
+            const pane=panes[index];
+            tab.onclick=function(){
+                console.log(this)
+                console.log(pane)
+                // trước khi add class active này kiểm tra xem có thằng nào đâng active ko
+                // .tab-item.active" để hai thằng này phải sát nhau 
+                $(".tab-item.active").classList.remove('active')
+                $(".tab-pane.active").classList.remove('active')
+
+                line.style.left=this.offsetLeft+'px'
+                 line.style.width=this.offsetWidth+'px'
+
+                this.classList.add('active')
+                pane.classList.add('active')
+            }
+        })
+        // ko dùng thằng này tại vi tabs này có 5 element pane nó cũng thês 
+        // nên index của tabdungf để lấy ra panes 
+        // sai rồi 
+        // tabs.forEach((pane)=>{
+        //     tabs.onclick=function(){
+        //         console.log(this)
+        //         // trước khi add class active này kiểm tra xem có thằng nào đâng active ko
+        //         // .tab-item.active" để hai thằng này phải sát nhau 
+        //         $(".tab-pane.active").classList.remove('active')
+        //         this.classList.add('active')
+        //     }
+        // })
+
+        // tiếp theo ddesn lượt line thì line ở thằng react sẽ ngắn hơn angular vì chiều dài nó ngắn hơn 
+    // cái line = chiều ngang của caí tab 
+    // đầu tiên khi load đc trang ra phải set cho thằng đầu tiên có line = thằng react
+
+    </script>
+
+</body>
+
+</html>

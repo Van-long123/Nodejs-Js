@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            display: none;
+        }
+        /* tức là người dùng đang tương tác với nó bằng cách nhấp chuột vào hoặc sử dụng bàn phím để trỏ vào nó,  */
+        /* dáu gã để láy ra ông element đăg sau  */
+        input:focus ~ul{
+            display:block
+        }
+        /* input:hover ~ ul{
+            display:block
+
+        } */
+        h2:hover{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- <a name="hc lap trinh" href="https://f8.edu.vn">HC lập trinh</a> -->
+
+    <a href="https://f8.edu.vn">HC lập trinh</a>
+    <br>
+    <a href="https://www.nettruyenmax.com/">ĐC truyện</a>
+<br> <br>
+
+
+<!-- bài toán khi click vào input thì mới hiện ra ul li  -->
+    <input type="text" placeholder="tìm kiếm">
+    <ul>
+        <li>JS</li>
+        <li>PHP</li>
+        <li>GOLANG</li>
+    </ul>
+    <h2>amen</h2>
+
+<!-- bài toán khi nhấn vào button in ra chữ click me khi nhấn vào div thì in ra DIV -->
+<!-- click vào div thì nó in ra DIV còn nhấn vào button thì nó in hai cái luôn
+     thì chỉ cầ cần nhán vào chỗ nào trong div thì đều in DIV nhấn vào click me thì in cả hai-->
+<div >
+        DIV 
+        <!-- khi click vào button thì sự kiện diễn ra tại element này sau khi xảy ra element này nó nổi lên thẻ cha thẻ ông nổi dần ra lọt vào ông div-->
+     <!-- bây giờ bỏ hành vi ổi bọt tại button cho nó thực hiện xong khỏi nổi bọt  -->
+        <button >click me</button>
+    </div>
+    <script src="PreventDefaultandStopPropagation.js"></script>
+</body>
+</html>

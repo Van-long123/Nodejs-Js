@@ -1,0 +1,11 @@
+extend layouts/default.pug
+include mixins/box-head.pug
+block content
+  //-trang product nó cũng có giống như này mà khác nội dung vì thế dùng mixin để tái sử dụng
+  //- muốn dùng đc mixin dùng từ khóa include và dùng dấu +
+  div(class="box-head")
+    h1(class="inner-title") trang chủ
+    div(class="inner-desc") Đây là đoạn mô tả của trang chủ
+
+  +boxHead("trang chủ","Đây là đoạn mô tả của trang chủ")
+  

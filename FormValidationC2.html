@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="FormValidationC2.css">
+</head>
+
+<!-- style="vertical-align: middle;" -->
+
+<body>
+  <div class="main">
+
+    <!-- trong thực tế ko có hai cái form này đâu chỉ là ví dụ  thôi  -->
+    <form action="" method="POST" class="form" id="register-form">
+      <h3 class="heading">Đăng nhập</h3>
+      <p class="desc">học lập trình ❤️</p>
+
+      <div class="spacer"></div>
+
+      <div class="form-group ">
+        <label for="fullname" class="form-label">Tên đầy đủ</label>
+        <input rules="required" id="fullname" name="fullname" type="text" placeholder="VD: Long Phạm"
+          class="form-control">
+        <span class="form-message"></span>
+
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <!-- rules="required|email" masy casi nafy tự qui ước ra tự định nghĩa  -->
+        <input id="email" name="email" rules="required|email" type="text" placeholder="VD: email@long.com"
+          class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input id="password" name="password" rules="required|min:6" type="password" placeholder="Nhập mật khẩu"
+          class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <button class="form-submit">Đăng nhập</button>
+    </form>
+  </div>
+  <script src="FormValidationC2.js"></script>
+  <script>
+    // mong muốn thành quả đạt được ==> Output là gì 
+    // cách này code it ít hơn dễ sử dụng hơn 
+    // rules ko định nghĩa trong này nữa đưa nó lên thẻ input
+    // Validator này sẽ ứng dụng cho nhiêu form nên chỉ định cho form nào bằng id nếo form cần sử dụng validate còn ko thì thôi
+
+
+    // Validator('#register-form')
+    // dùng cái trên là ổn mà muốn khi submit có value trả về thì dùng cách này 
+    // khi dùng từ khóa new này thì Validator này là function contructor và việc khởi 
+    // tạo từ khóa new thì sẽ trả registerForm một đối tượng được khơởi tạo từ những cái 
+    //  mô tả của function Validator         
+    // c1              nhận một dôdis tượng
+    var form=new Validator('#register-form')
+    // c1 
+    form.onSubmit=function(formData){
+      // bây giờgia dụn ko muốn nhận cái value muốn submit bình thường chỉ sử dụng thư 
+      // viện Validator nafy để  validation thôi  thì bỏ fđi form.onSubmit=function(formData){ này là xong và ko caần dùng   var form=new này luôn   Validator('#register-form')                                     
+      // và khi bỏ function này đi thì nó trở về submit với hành vi mặc định 
+      console.log(formData)
+    }
+    form.test=124;
+//c2 dùng cách dùng dễ nhìn hơn là c1
+// Validator('#register-form',{
+//   onSubmit:function(data){
+//     console.log(data)
+//   }
+// })
+    // nếu có một form khác cũng muốn đc validate
+    // Validator('#login-form')
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .line{
+            line-height: 5px;
+            border: 1px solid black;
+            width: 460px;
+            height: 550px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .line1{
+            line-height: 35px;
+        }
+        hr{
+            border: none;
+            border-top: 1px solid black;
+        }
+        .boder{
+            border: 1px solid rgb(31, 30, 30);
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            margin-right: 5px;
+            background-color: rgb(237, 235, 235);
+        }
+        .boder1{
+            border: 1px solid rgb(31, 30, 30);
+            border-radius: 5px;
+            height: 25px;
+            width: 415px;
+            margin-right: 5px;
+            background-color: rgb(237, 235, 235);
+        }
+        .wi2{
+            height: 25px;
+            width: 138px;
+            border-radius: 5px;
+        }
+        .line2{
+            line-height: 22px;
+        }
+        .gioitinh{
+            margin-right: 8px;
+            border: 1px solid black;
+            height: 25px;
+            width: 130px;
+            border-radius: 5px;
+            position: relative;
+
+        }
+        .gioi{
+            display: flex;
+        }
+        div.gioi label{
+            margin-left: 10px; 
+        }
+        div.gioi input{
+            position: absolute;
+            top: 2px;
+            left: 80%;
+        }
+        /* #id{ 
+            border: ;
+        } */
+    </style>
+</head>
+<body>
+    <form >
+        <div class="line">
+            <h2>Đăng ký</h2>
+            <p>Nhanh chóng và dễ dàng</p>
+            <hr>
+            <div class="line1">
+                
+                <input oninvalid="Invalidho(this);" oninput="Invalidho(this);"  class="boder"  type="text" placeholder="Họ"  required>
+                <input oninvalid="Invalidten(this);" oninput="Invalidten(this);" class="boder" type="text" placeholder="Tên" required> <br>
+                <input oninvalid="InvalidEmail(this);" oninput="InvalidEmail(this);"  class="boder1" type="email" placeholder="Số di động hoặc email" required> <br>
+                <!-- phải chứa 8 ký tự trở lên có ít nhất một số và một chữ hoa và chữ thường -->
+                <input oninvalid="InvalidPass(this);" oninput="InvalidPass(this);" class="boder1" type="password" placeholder="Mật khẩu mới"  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">  <br>
+                <div class="line2">
+                    <label for="N">Ngày sinh </label>
+                    <span style="position: relative;top: 5.2px;"><img src="la.jpg" ></span> <br>
+                    <select name="N" id="N" class="wi2">
+                        <option value="">1</option>
+                       <option value="">2</option>
+                
+                    </select>
+                    <select name="N" id="N" class="wi2">
+                        <option value="">Tháng 1</option>
+                        <option value="">Tháng 2</option>
+                        <option value="">Tháng 3</option>
+         
+                    </select>
+                    <select name="N" id="N" class="wi2">
+                        <option value="">2023</option>
+                    </select>  <br>
+                <span style="margin-top: 15px;" >
+                    
+                    <label for="G">Giới tính</label> 
+                    <span style="position: relative;top: 5.2px;"><img src="la.jpg" ></span> 
+                    <div class="gioi">
+                        <div class="gioitinh">
+                            <label for="N">Nữ</label>
+                            <input  type="radio" name="gender" id="N">
+                        </div>
+                        <div class="gioitinh">
+                            <label for="n">Nam</label>
+                            <input  type="radio" name="gender" id="n">
+                        </div>
+                        <span class="gioitinh">
+                            <label for="T">Tùy chỉnh</label>
+                            <input  type="radio" name="gender" id="T">
+                        </div>
+                        
+                </span>
+                   
+                </div>
+                <p>Bằng cách nhấp vào Tạo tài khoản, bạn đồng ý với <span style="color: blue;">Điều khoản</span> <br> của chúng tôi và rằng bạn đã đọc <span style="color: blue;">Chính sách dữ liệu</span> của chúng <br> tôi, bao gồm <span style="color: blue;">Sử dụng cookie</span> . Bạn có thể nhận được thông báo <br> qua SMS từ Facebook và có thể bỏ chọn bất kỳ lúc nào</p>
+                <button type="submit" style="height: 33px;width: 170px;background-color: green;color: aliceblue;margin-left: 120px;">Đăng ký</button>
+                
+            </div>
+            
+        </div>
+        <!-- <label for="phone">Số điện thoại:</label> -->
+        <!-- <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Vui lòng nhập số điện thoại gồm 10 chữ số"> -->
+    </form>
+    <script>
+        function Invalidho(textbox){
+            if(textbox.value===''){
+                textbox.setCustomValidity('bạn phải nhập Họ');
+            }
+            else{
+                textbox.setCustomValidity('');
+            }
+            return true;
+        }
+        function Invalidten(textbox){
+            if(textbox.value===''){
+                textbox.setCustomValidity('Bạn cần nhập tên');
+            }
+            else{
+                textbox.setCustomValidity('');
+            }
+        }
+        function InvalidEmail(textbox){
+            if(textbox.value===''){
+                textbox.setCustomValidity('Bạn cần nhập email');
+            }
+            else if(textbox.validity.typeMismatch){
+                textbox.setCustomValidity('Địa chỉ email không đúng định dạng');
+            }
+            else{
+                textbox.setCustomValidity('');
+            }
+        }
+        function InvalidPass(textbox){
+            if(textbox.value===''){
+                textbox.setCustomValidity('bạn cần nhập mật khẩu');
+            }
+            else if(textbox.validity.patternMismatch){
+                textbox.setCustomValidity('Mật khẩu không đúng định dạng');
+            }
+            else{
+                textbox.setCustomValidity('');
+            }
+        }
+    </script>
+</body>
+</html>
